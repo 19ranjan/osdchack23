@@ -1,51 +1,51 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose")
 
-const PropertySchema=new mongoose.Schema({  
-    currentOwner:{
-        type:mongoose.Types.ObjectId,
-        ref:"User",
-        required:true,
+const PropertySchema = new mongoose.Schema({
+    currentOwner: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+        required: true,
     },
-    title:{
-        type:String,
-        required:true,
-        min:8,
+    title: {
+        type: String,
+        required: true,
+        min: 8,
     },
-    type:{
-        type:String,
-        enum:["Agra", "Noida", "Kota"], //tropical ,
-        required:true,
+    type: {
+        type: String,
+        enum: ["Agra", "Noida", "Kota"], //tropical ,
+        required: true,
     },
-    desc:{
-        type:String,
-        required:true,
-        min:20,
+    desc: {
+        type: String,
+        required: true,
+        min: 20,
     },
-    img:{
-        type:String,
-        required:true,
+    img: {
+        type: String,
+        required: true,
     },
-    price:{
-        type:Number,
-        required:true,
+    price: {
+        type: Number,
+        required: true,
     },
-    sqmeters:{
-        type:Number,
-        required:true,
+    sqmeters: {
+        type: Number,
+        required: true,
     },
-    continent:{
-        type:String,
-        required:true,
+    continent: {
+        type: String,
+        required: true,
     },
-    beds:{
-        type:Number,
-        required:true,
-        min:2,
+    beds: {
+        type: Number,
+        required: true,
+        min: 2,
     },
-    featured:{
-        type:Boolean,
-        default:false
+    featured: {
+        type: Boolean,
+        default: false
     }
-},{timestamps:true})
+}, { timestamps: true })
 
-module.exports=mongoose.model("Property",PropertySchema)
+module.exports = mongoose.model("Property", PropertySchema)
